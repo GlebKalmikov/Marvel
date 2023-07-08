@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Weather from './сomponents/Pages/Weather';
+import Explore from './сomponents/Pages/Explore';
+import Cities from './сomponents/Pages/Cities';
+import Settings from './сomponents/Pages/Settings';
 
-function App() {
+const  App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>  
+    <Weather /> 
+    <Explore />
+    <Cities />
+    <Settings />
     </div>
+   
   );
 }
 
