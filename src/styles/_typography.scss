@@ -1,0 +1,14 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap');
+
+body {
+  font-family: $main_font;
+}
+
+.title {
+  color: rgb(255, 246, 246);
+  padding-top: 60px;
+  @media screen and (max-width: 900px) {
+    font-size: 18px;
+  }
+}

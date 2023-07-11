@@ -1,12 +1,4 @@
-@import-normalize;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@use './base' as *;
+@use './typography' as *;
 
-* {
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  color: #FFF;
-}
-body {
-  margin: 0;
-}
+@import-normalize;

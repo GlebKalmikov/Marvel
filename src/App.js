@@ -1,18 +1,41 @@
-import Weather from './сomponents/Pages/Weather';
-import Explore from './сomponents/Pages/Explore';
-import Cities from './сomponents/Pages/Cities';
-import Settings from './сomponents/Pages/Settings';
+import React, { createContext, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const  App = () => {
+import Home from './pages/Home';
+import ErrorPage from './pages/NotFound';
+import Photos from './pages/Photos';
+import Photo from './pages/Photo';
+
+export const ThemeContext = createContext('light');
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/photos',
+    element: <Photos />,
+  },
+  {
+    path: '/photos/:photoId',
+    element: <Photo />,
+  },
+]);
+
+const App = () => {
+  const [theme, setTheme] = useState('light');
+
   return (
-    <div>  
-    <Weather /> 
-    <Explore />
-    <Cities />
-    <Settings />
-    </div>
-   
+    <ThemeContext.Provider value={{
+      theme,
+      setTheme,
+    }}>
+      <RouterProvider router={router} />
+    </ThemeContext.Provider>
   );
-}
+};
 
 export default App;
