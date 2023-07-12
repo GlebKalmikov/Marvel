@@ -4,31 +4,31 @@ import Layout from '../layout/MainLayout';
 import Container from '../components/Container/Container';
 import { Grid, Card, CardMedia, Box, CircularProgress, Breadcrumbs } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import comicsService from '../service/comics';
 
-const Photo = () => {
-  const { comicId } = useParams();
+import charactersService from '../service/characters';
+
+const Character = () => {
+  const { characterId } = useParams();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const getComic = async (characterId) => {
+      const data = await charactersService.getCharacter(characterId);
 
-    const getComic = async (id) => {
-      const data = await comicsService.getComic(id);
-
-      console.log('data comic', data.data.results[0])
+      console.log('data character => ', data.data.results[0])
       setData(data.data.results[0]);
 
       setLoading(false);
     };
 
     try {
-      getComic(comicId);
+      getComic(characterId);
 
     } catch (error) {
       console.log('error :>> ', error);
     }
-  }, [comicId]);
+  }, [characterId]);
 
   return (
     <Layout>
@@ -44,7 +44,7 @@ const Photo = () => {
                   </Box>
                 </Link>
                 <Link>
-                  {data.title || data.id}
+                  {data.name || data.id}
                 </Link>
               </Breadcrumbs>
             </Box>
@@ -53,22 +53,18 @@ const Photo = () => {
                 <Card>
                   <CardMedia
                     component="img"
-                    alt={data.title}
+                    alt={data.name}
                     height="800"
                     image={`${data.thumbnail.path}.${data.thumbnail.extension}`}
                   />
                 </Card>
               </Grid>
               <Grid item xs={6}>
-                <h1>{data.title}</h1>
+                <h1>{data.name}</h1>
                 <p>
-                  {data.textObjects[0].text}
+                  {data.description}
                 </p>
-                <div>
-                  {data.characters.items && data.characters.items.map((item, index) => {
-                      return (<div key={index}>{item.name}</div>)
-                  })}
-                </div>
+                <a href={data.urls[2].url} target='_blank' rel="noreferrer">Go to Marvel article</a>
               </Grid>
             </Grid>
           </Box>
@@ -89,4 +85,4 @@ const Photo = () => {
   );
 };
 
-export default Photo;
+export default Character;

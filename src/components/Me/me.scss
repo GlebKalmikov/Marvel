@@ -1,0 +1,51 @@
+.box {
+ margin: 40px;
+ display: flex;
+ justify-content: center;
+ @media screen and (max-width: 600px) {
+  flex-direction: column;
+ }
+}
+
+.foto_size {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  margin-top: 30px;
+  &:hover {
+  transition: all .3 ease;
+  background-repeat: 15px;
+  }
+
+}
+.titel {
+ padding: 0 30px;
+ max-width: 600px;
+ font-size: 22px;
+}
+.sub-title {
+  width: 300px;
+  padding-top: 20px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.427);
+  border-radius: 10px;
+
+}
+.blok-img {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 300px;
+}
+
+.info {
+  color: hsl(0, 0%, 100%);
+  padding: 10px;
+  &:hover {
+    color: rgb(255, 34, 34);
+  }
+}
+li {
+  padding-bottom: 20px;
+  font-size: 18px;
+}

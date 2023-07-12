@@ -10,7 +10,7 @@ const getParams = () => {
   const params = new URLSearchParams({
     ts: ts,
     apikey: API_KEY_PUBLIC,
-    hash: md5(ts + API_KEY_PRIVATE + API_KEY_PUBLIC), 
+    hash: md5(ts + API_KEY_PRIVATE + API_KEY_PUBLIC), // Generate hash for authentication
   });
 
   return `?${params}`
@@ -33,7 +33,7 @@ const comicsService = {
     return data;
   },
   getComic: async(id) => {
-    const data = await api.request('GET', `GET /v1/public/comics/${id}${getParams()}`)
+    const data = await api.request('GET', `/v1/public/comics/${id}${getParams()}`)
 
     return data;
   },

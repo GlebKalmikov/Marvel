@@ -16,9 +16,6 @@ const Navigation = () => {
     document.querySelector('body').classList.toggle('dark')
   };
 
-  console.log('checked :>> ', checked);
-  console.log('theme :>> ', theme);
-
   return (
     <nav className={`nav nav--${theme.theme}`}>
       <ul className="nav__list">
@@ -28,12 +25,17 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li className="nav__list-item">
-          <NavLink to="/photos" className="nav__list-link">
+          <NavLink to="/comics" className="nav__list-link">
             Asgard
           </NavLink>
         </li>
         <li className="nav__list-item">
-          <NavLink to="NavLinkbout" className="nav__list-link">
+          <NavLink to="/characters" className="nav__list-link">
+            Characters
+          </NavLink>
+        </li>
+        <li className="nav__list-item">
+          <NavLink to="/about" className="nav__list-link">
             About
           </NavLink>
         </li>

@@ -8,12 +8,12 @@ const Dropdown = ({ list = [], label = 'Show'}) => {
     // console.log('event :>> ', event);
 
 
-    setOpen(!open) // !true = false; !false = true
-    // if (open) {
-    //   // setOpen(false)
-    // } else {
-    //   // setOpen(true)
-    // }
+    // setOpen(!open) // !true = false; !false = true
+    // // if (open) {
+    // //   // setOpen(false)
+    // // } else {
+    // //   // setOpen(true)
+    // // }
   }
 
   console.log('open :>> ', open);

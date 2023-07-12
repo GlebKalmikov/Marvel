@@ -18,13 +18,13 @@ const transitionStyles = {
   exited:  { opacity: 0 },
 };
 
-const Card = ({ title, text, alt, src, id }) => {
+const Card = ({ title, type, alt, src, id }) => {
   const [open, setOpen] = useState(false)
   const nodeRef = useRef(null);
 
   return (
     <Link
-      to={`/photos/${id}/`}
+      to={`/${type}/${id}/`}
       className="card__link"
       onMouseOver={() => setOpen(true)}
       onMouseOut={() => setOpen(false)}
@@ -45,7 +45,7 @@ const Card = ({ title, text, alt, src, id }) => {
               }}
               open={open}
           >
-            <Typography variant="h6">Open</Typography>
+            <Typography variant="h6" align='center'>{title}</Typography>
           </Backdrop>
         </div>
       )}

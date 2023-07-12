@@ -6,6 +6,10 @@ import Home from './pages/Home';
 import ErrorPage from './pages/NotFound';
 import Photos from './pages/Photos';
 import Photo from './pages/Photo';
+import About from './pages/About';
+import Characters from './pages/Characters';
+import Character from './pages/Character';
+import Comics from './pages/Comics';
 
 export const ThemeContext = createContext('light');
 
@@ -16,12 +20,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/photos',
-    element: <Photos />,
+    path: '/comics',
+    element: <Comics />,
   },
   {
-    path: '/photos/:photoId',
+    path: '/comics/:comicId',
     element: <Photo />,
+  },
+  {
+    path: '/characters',
+    element: <Characters />,
+  },
+  {
+    path: '/characters/:characterId',
+    element: <Character />,
+  },
+  {
+    path: '/about',
+    element: <About />,
   },
 ]);
 
