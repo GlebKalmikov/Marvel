@@ -20,7 +20,10 @@ const Characters = () => {
 
   return (
     <Layout>
-      <h1 className='title'>Characters</h1>
+    
+    <h1 className='title'>Characters</h1>
+    
+     
 
       <Container>
         {data && <List data={data} type={'characters'} />}

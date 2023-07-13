@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home';
 import ErrorPage from './pages/NotFound';
-import Photos from './pages/Photos';
-import Photo from './pages/Photo';
+import Renders from './pages/Renders';
+import Render from './pages/Render';
 import About from './pages/About';
 import Characters from './pages/Characters';
 import Character from './pages/Character';
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/comics/:comicId',
-    element: <Photo />,
+    element: <Render />,
   },
   {
     path: '/characters',

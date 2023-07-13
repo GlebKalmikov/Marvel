@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 
 import Container from '../Container/Container';

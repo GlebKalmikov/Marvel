@@ -6,7 +6,7 @@ import { Grid, Card, CardMedia, Box, CircularProgress, Breadcrumbs } from '@mui/
 import HomeIcon from '@mui/icons-material/Home';
 import comicsService from '../service/comics';
 
-const Photo = () => {
+const Render = () => {
   const { comicId } = useParams();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
@@ -89,4 +89,4 @@ const Photo = () => {
   );
 };
 
-export default Photo;
+export default Render;

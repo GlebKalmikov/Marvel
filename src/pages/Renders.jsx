@@ -1,10 +1,10 @@
 import Layout from '../layout/MainLayout';
 
-const Photos = () => {
+const Renders = () => {
   return (
    
     <Layout />
   )
 }
 
-export default Photos;
+export default Renders;

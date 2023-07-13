@@ -21,7 +21,7 @@ const Navigation = () => {
       <ul className="nav__list">
         <li className="nav__list-item">
           <NavLink to="/" className="nav__list-link">
-            Earth
+            Home
           </NavLink>
         </li>
         <li className="nav__list-item">

@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../layout/MainLayout';
-import Hero from '../components/Hero/Hero';
-import Form from '../components/SearchForm/SearchForm';
 import List from '../components/List/List';
 import comicsService from '../service/comics';
 import Container from '../components/Container/Container';
-import { ThemeContext } from '../App';
 
 const Comics = () => {
   const [data, setData] = useState()
@@ -33,7 +30,7 @@ const Comics = () => {
 
   return (
     <Layout>
-        <h1 className='title'>I can do this all day</h1>
+        <h1 className='title'></h1>
 
       <Container>
         {data && <List data={data} type={'comics'}/>}
